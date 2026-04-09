@@ -25,62 +25,75 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 px-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-8">
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h1 className="text-xl font-bold text-gray-900">Portal de Unidades</h1>
-          <p className="text-sm text-gray-500 mt-1">Vigilancia Sarampion - IGSS</p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#003876] to-[#00264d] px-4">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden">
+        {/* Header con logo IGSS */}
+        <div className="bg-gradient-to-r from-[#003876] to-[#005baa] px-8 pt-8 pb-6 text-center">
+          <img
+            src={import.meta.env.BASE_URL + 'igss-logo.png'}
+            alt="IGSS"
+            className="h-16 mx-auto mb-4 drop-shadow-lg"
+          />
+          <h1 className="text-lg font-bold text-white">Portal de Unidades</h1>
+          <p className="text-blue-200 text-xs mt-1">
+            Departamento de Medicina Preventiva
+          </p>
+          <p className="text-blue-300 text-xs">
+            Seccion de Epidemiologia
+          </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Usuario</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm"
-              placeholder="ej: hge, h.escuintla"
-              autoComplete="username"
-              autoFocus
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm"
-              autoComplete="current-password"
-              required
-            />
-          </div>
-
-          {error && (
-            <div className="bg-red-50 text-red-700 text-sm px-4 py-2.5 rounded-lg">
-              {error}
+        {/* Formulario */}
+        <div className="p-8">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Usuario</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003876] focus:border-[#003876] outline-none text-sm"
+                autoComplete="username"
+                autoFocus
+                required
+              />
             </div>
-          )}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Contrasena</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003876] focus:border-[#003876] outline-none text-sm"
+                autoComplete="current-password"
+                required
+              />
+            </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 text-white py-2.5 rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm"
-          >
-            {loading ? 'Ingresando...' : 'Ingresar'}
-          </button>
-        </form>
+            {error && (
+              <div className="bg-red-50 text-red-700 text-sm px-4 py-2.5 rounded-lg border border-red-100">
+                {error}
+              </div>
+            )}
 
-        <p className="text-xs text-gray-400 text-center mt-6">
-          IGSS - Departamento de Medicina Preventiva
-        </p>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-[#003876] text-white py-2.5 rounded-lg font-medium hover:bg-[#002b5c] disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm"
+            >
+              {loading ? 'Ingresando...' : 'Ingresar'}
+            </button>
+          </form>
+
+          <div className="mt-6 pt-4 border-t border-gray-100 text-center">
+            <p className="text-xs text-gray-400">
+              Vigilancia Epidemiologica - Brote Sarampion 2026
+            </p>
+            <p className="text-xs text-gray-300 mt-1">
+              Solicite sus credenciales a Epidemiologia Central
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
