@@ -1,17 +1,50 @@
 @import "tailwindcss";
 
+@theme {
+  /* Verdes IGSS (logo: árbol verde) */
+  --color-igss-900: #0A3D0C;
+  --color-igss-800: #1B5E20;
+  --color-igss-700: #2E7D32;
+  --color-igss-600: #388E3C;
+  --color-igss-500: #43A047;
+  --color-igss-400: #66BB6A;
+  --color-igss-300: #A5D6A7;
+  --color-igss-200: #C8E6C9;
+  --color-igss-100: #E8F5E9;
+  --color-igss-50:  #F1F8F1;
+
+  /* Rojo IGSS (letras del logo) */
+  --color-igss-red: #C41E24;
+  --color-igss-red-dark: #8E1519;
+
+  /* Dorado IGSS (banner) */
+  --color-igss-gold: #BFA033;
+  --color-igss-gold-dark: #8B7424;
+  --color-igss-gold-light: #D4B94E;
+  --color-igss-gold-50: #FDF8E8;
+
+  /* Café IGSS (tronco — section headers) */
+  --color-igss-brown: #5D4037;
+  --color-igss-brown-light: #795548;
+
+  /* Shadows IGSS */
+  --shadow-igss: 0 4px 20px rgba(27, 94, 32, 0.15);
+  --shadow-igss-lg: 0 8px 30px rgba(27, 94, 32, 0.2);
+
+  /* Font */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
 body {
   background: linear-gradient(135deg, #F1F8F1 0%, #f8f9fa 50%, #FDF8E8 100%);
   min-height: 100vh;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
