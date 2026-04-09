@@ -1,4 +1,8 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8510/api/portal'
+// En producción: URL relativa (nginx proxea /portal-unidades/api/ → backend)
+// En desarrollo: localhost directo
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:8510/api/portal'
+  : '/portal-unidades/api'
 
 let _token = null
 

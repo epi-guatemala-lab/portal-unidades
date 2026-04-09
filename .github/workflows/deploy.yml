@@ -25,7 +25,6 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          VITE_API_URL: https://igss.mediclic.org/sarampion/api/portal
           VITE_BASE_PATH: /portal-unidades/
       - uses: actions/upload-pages-artifact@v3
         with:
