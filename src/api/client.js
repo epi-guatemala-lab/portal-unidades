@@ -1,8 +1,6 @@
-// En producción: URL relativa (nginx proxea /portal-unidades/api/ → backend)
-// En desarrollo: localhost directo
-const API_URL = import.meta.env.DEV
-  ? 'http://localhost:8510/api/portal'
-  : '/portal-unidades/api'
+// API URL inyectada via secret en GitHub Actions (nunca en código fuente)
+// Dev: localhost, Prod: secret VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8510/api/portal'
 
 let _token = null
 

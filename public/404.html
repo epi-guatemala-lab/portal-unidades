@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portal Unidades - IGSS</title>
+    <script>
+      // SPA redirect for GitHub Pages
+      // Converts /portal-unidades/fichas/123 → /portal-unidades/?p=/fichas/123
+      var base = '/portal-unidades/'
+      var path = window.location.pathname.replace(base, '/')
+      var search = window.location.search
+      window.location.replace(
+        window.location.origin + base + '?p=' + encodeURIComponent(path + search)
+      )
+    </script>
+  </head>
+  <body></body>
+</html>
