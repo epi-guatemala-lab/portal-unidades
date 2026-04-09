@@ -79,7 +79,7 @@ export default function FichaDetailPage() {
     }
   }
 
-  if (loading) return <div className="animate-pulse"><div className="bg-igss-50 rounded-2xl h-96 border border-igss-100" /></div>
+  if (loading) return <div className="animate-pulse"><div className="bg-[#F1F8F1] rounded-2xl h-96 border border-[#E8F5E9]" /></div>
   if (error) return <div className="bg-red-50 border border-red-200/60 rounded-xl p-4 text-sm text-red-800">{error}</div>
   if (!ficha) return null
 
@@ -89,14 +89,14 @@ export default function FichaDetailPage() {
       <div className="flex items-center justify-between">
         <button
           onClick={() => navigate(-1)}
-          className="text-sm text-igss-700 hover:text-igss-900 font-semibold hover:bg-igss-50 px-3 py-1.5 rounded-xl transition-all active:scale-95"
+          className="text-sm text-[#2E7D32] hover:text-[#0A3D0C] font-semibold hover:bg-[#F1F8F1] px-3 py-1.5 rounded-xl transition-all active:scale-95"
         >
           &larr; Volver
         </button>
         <button
           onClick={handleDownloadPdf}
           disabled={downloading}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-igss-800 to-igss-700 text-white rounded-xl text-sm font-bold hover:from-igss-900 hover:to-igss-800 disabled:opacity-50 transition-all duration-200 shadow-sm active:scale-[0.97]"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#1B5E20] to-[#2E7D32] text-white rounded-xl text-sm font-bold hover:from-[#0A3D0C] hover:to-[#1B5E20] disabled:opacity-50 transition-all duration-200 shadow-sm active:scale-[0.97]"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -106,15 +106,15 @@ export default function FichaDetailPage() {
       </div>
 
       {/* Patient header card */}
-      <div className="bg-gradient-to-r from-igss-800 to-igss-700 rounded-2xl shadow-sm p-5 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#1B5E20] to-[#2E7D32] rounded-2xl shadow-sm p-5 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-8 translate-x-8" />
         <div className="relative flex items-start justify-between">
           <div>
             <h2 className="text-lg font-extrabold">{ficha.nombre_apellido || 'Sin nombre'}</h2>
-            <p className="text-igss-200 text-sm mt-1">
+            <p className="text-[#C8E6C9] text-sm mt-1">
               {ficha.afiliacion || 'Sin afiliacion'} &middot; {ficha.edad_anios ? `${ficha.edad_anios} anos` : ''} {ficha.sexo === 'M' ? 'Masculino' : ficha.sexo === 'F' ? 'Femenino' : ''}
             </p>
-            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-igss-300">
+            <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[#A5D6A7]">
               <span>SE {ficha.semana_epidemiologica || '?'}</span>
               <span>{ficha.fecha_notificacion || ''}</span>
               <span>{ficha.unidad_medica || ''}</span>
@@ -138,7 +138,7 @@ export default function FichaDetailPage() {
                 return (
                   <div key={key}>
                     <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">{label}</p>
-                    <p className="text-sm text-igss-900 font-semibold mt-0.5 truncate">{val}</p>
+                    <p className="text-sm text-[#0A3D0C] font-semibold mt-0.5 truncate">{val}</p>
                   </div>
                 )
               })}
@@ -157,8 +157,8 @@ export default function FichaDetailPage() {
 function SectionHeader({ title }) {
   return (
     <div className="flex items-center gap-2">
-      <div className="w-6 h-[2px] bg-igss-gold rounded-full" />
-      <span className="text-xs font-bold text-igss-brown uppercase tracking-[0.1em]">{title}</span>
+      <div className="w-6 h-[2px] bg-[#BFA033] rounded-full" />
+      <span className="text-xs font-bold text-[#5D4037] uppercase tracking-[0.1em]">{title}</span>
       <div className="flex-1 h-[1px] bg-gray-200" />
     </div>
   )

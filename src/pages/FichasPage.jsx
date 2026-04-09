@@ -60,8 +60,8 @@ export default function FichasPage() {
     <div className="space-y-4">
       {/* Page title */}
       <div className="flex items-center gap-3">
-        <div className="w-1 h-8 rounded-full bg-gradient-to-b from-igss-700 to-igss-500" />
-        <h2 className="text-lg font-extrabold text-igss-900 tracking-tight">Fichas Epidemiologicas</h2>
+        <div className="w-1 h-8 rounded-full bg-gradient-to-b from-[#2E7D32] to-[#43A047]" />
+        <h2 className="text-lg font-extrabold text-[#0A3D0C] tracking-tight">Fichas Epidemiologicas</h2>
       </div>
 
       {/* Filters */}
@@ -73,16 +73,16 @@ export default function FichasPage() {
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Buscar por nombre o afiliacion..."
-              className="flex-1 px-4 py-2.5 border-2 border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-igss-600/20 focus:border-igss-600 outline-none bg-white transition-all duration-200 placeholder:text-gray-400"
+              className="flex-1 px-4 py-2.5 border-2 border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-[#388E3C]/20 focus:border-[#388E3C] outline-none bg-white transition-all duration-200 placeholder:text-gray-400"
             />
-            <button type="submit" className="px-5 py-2.5 bg-gradient-to-r from-igss-800 to-igss-700 text-white rounded-xl text-sm font-bold hover:from-igss-900 hover:to-igss-800 transition-all duration-200 shadow-sm active:scale-[0.97]">
+            <button type="submit" className="px-5 py-2.5 bg-gradient-to-r from-[#1B5E20] to-[#2E7D32] text-white rounded-xl text-sm font-bold hover:from-[#0A3D0C] hover:to-[#1B5E20] transition-all duration-200 shadow-sm active:scale-[0.97]">
               Buscar
             </button>
           </form>
           <select
             value={filters.clasificacion}
             onChange={(e) => handleFilterChange('clasificacion', e.target.value)}
-            className="px-3 py-2.5 border-2 border-gray-200 rounded-xl text-sm bg-white appearance-none focus:border-igss-600 focus:ring-2 focus:ring-igss-600/20 outline-none transition-all"
+            className="px-3 py-2.5 border-2 border-gray-200 rounded-xl text-sm bg-white appearance-none focus:border-[#388E3C] focus:ring-2 focus:ring-[#388E3C]/20 outline-none transition-all"
           >
             <option value="">Todas</option>
             <option value="SOSPECHOSO">Sospechoso</option>
@@ -97,7 +97,7 @@ export default function FichasPage() {
             placeholder="SE"
             min="1"
             max="53"
-            className="w-20 px-3 py-2.5 border-2 border-gray-200 rounded-xl text-sm bg-white focus:border-igss-600 outline-none transition-all"
+            className="w-20 px-3 py-2.5 border-2 border-gray-200 rounded-xl text-sm bg-white focus:border-[#388E3C] outline-none transition-all"
           />
         </div>
       </div>
@@ -105,12 +105,12 @@ export default function FichasPage() {
       {/* Export + count */}
       <div className="flex justify-between items-center">
         <p className="text-sm text-gray-500 font-medium">
-          {data ? <><span className="text-igss-800 font-bold">{data.total}</span> fichas encontradas</> : ''}
+          {data ? <><span className="text-[#1B5E20] font-bold">{data.total}</span> fichas encontradas</> : ''}
         </p>
         <button
           onClick={handleExportExcel}
           disabled={exporting || !data?.total}
-          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-igss-700 text-igss-700 rounded-xl text-sm font-bold hover:bg-igss-50 disabled:opacity-40 transition-all duration-200 active:scale-[0.97]"
+          className="inline-flex items-center gap-2 px-4 py-2 border-2 border-[#2E7D32] text-[#2E7D32] rounded-xl text-sm font-bold hover:bg-[#F1F8F1] disabled:opacity-40 transition-all duration-200 active:scale-[0.97]"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -127,22 +127,22 @@ export default function FichasPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-igss-50/50 border-b border-igss-100">
-                <th className="px-4 py-3 text-left text-[11px] font-bold text-igss-brown uppercase tracking-wider">Paciente</th>
-                <th className="px-4 py-3 text-left text-[11px] font-bold text-igss-brown uppercase tracking-wider hidden md:table-cell">Afiliacion</th>
-                <th className="px-4 py-3 text-left text-[11px] font-bold text-igss-brown uppercase tracking-wider hidden lg:table-cell">Edad</th>
-                <th className="px-4 py-3 text-left text-[11px] font-bold text-igss-brown uppercase tracking-wider">Clasificacion</th>
-                <th className="px-4 py-3 text-center text-[11px] font-bold text-igss-brown uppercase tracking-wider hidden md:table-cell">SE</th>
-                <th className="px-4 py-3 text-left text-[11px] font-bold text-igss-brown uppercase tracking-wider hidden lg:table-cell">Fecha</th>
+              <tr className="bg-[#F1F8F1]/50 border-b border-[#E8F5E9]">
+                <th className="px-4 py-3 text-left text-[11px] font-bold text-[#5D4037] uppercase tracking-wider">Paciente</th>
+                <th className="px-4 py-3 text-left text-[11px] font-bold text-[#5D4037] uppercase tracking-wider hidden md:table-cell">Afiliacion</th>
+                <th className="px-4 py-3 text-left text-[11px] font-bold text-[#5D4037] uppercase tracking-wider hidden lg:table-cell">Edad</th>
+                <th className="px-4 py-3 text-left text-[11px] font-bold text-[#5D4037] uppercase tracking-wider">Clasificacion</th>
+                <th className="px-4 py-3 text-center text-[11px] font-bold text-[#5D4037] uppercase tracking-wider hidden md:table-cell">SE</th>
+                <th className="px-4 py-3 text-left text-[11px] font-bold text-[#5D4037] uppercase tracking-wider hidden lg:table-cell">Fecha</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
                 Array.from({ length: 5 }).map((_, i) => (
-                  <tr key={i} className="border-b border-igss-50 animate-pulse">
+                  <tr key={i} className="border-b border-[#E8F5E9] animate-pulse">
                     {[1,2,3,4,5,6].map(j => (
                       <td key={j} className={`px-4 py-3.5 ${j > 2 && j < 6 ? 'hidden md:table-cell' : ''} ${j === 3 || j === 6 ? 'hidden lg:table-cell' : ''}`}>
-                        <div className="h-4 bg-igss-50 rounded w-20" />
+                        <div className="h-4 bg-[#F1F8F1] rounded w-20" />
                       </td>
                     ))}
                   </tr>
@@ -150,10 +150,10 @@ export default function FichasPage() {
               ) : (data?.data || []).map((f) => (
                 <tr
                   key={f.registro_id}
-                  className="border-b border-igss-50 hover:bg-igss-50/50 cursor-pointer transition-all duration-200"
+                  className="border-b border-[#E8F5E9] hover:bg-[#F1F8F1]/50 cursor-pointer transition-all duration-200"
                   onClick={() => navigate(`/fichas/${f.registro_id}`)}
                 >
-                  <td className="px-4 py-3.5 text-igss-900 font-semibold truncate max-w-[200px]">
+                  <td className="px-4 py-3.5 text-[#0A3D0C] font-semibold truncate max-w-[200px]">
                     {f.nombre_apellido || 'Sin nombre'}
                   </td>
                   <td className="px-4 py-3.5 text-gray-500 hidden md:table-cell font-mono text-xs">
@@ -179,24 +179,24 @@ export default function FichasPage() {
 
         {/* Pagination */}
         {data && data.pages > 1 && (
-          <div className="flex items-center justify-between px-4 py-3 border-t border-igss-100 bg-igss-50/30">
+          <div className="flex items-center justify-between px-4 py-3 border-t border-[#E8F5E9] bg-[#F1F8F1]/30">
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1}
               className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
-                page <= 1 ? 'text-gray-300 cursor-not-allowed' : 'text-igss-700 hover:bg-igss-100 active:scale-95'
+                page <= 1 ? 'text-gray-300 cursor-not-allowed' : 'text-[#2E7D32] hover:bg-[#E8F5E9] active:scale-95'
               }`}
             >
               &larr; Anterior
             </button>
-            <span className="text-sm text-igss-brown font-bold">
+            <span className="text-sm text-[#5D4037] font-bold">
               {page} / {data.pages}
             </span>
             <button
               onClick={() => setPage((p) => Math.min(data.pages, p + 1))}
               disabled={page >= data.pages}
               className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
-                page >= data.pages ? 'text-gray-300 cursor-not-allowed' : 'text-igss-700 hover:bg-igss-100 active:scale-95'
+                page >= data.pages ? 'text-gray-300 cursor-not-allowed' : 'text-[#2E7D32] hover:bg-[#E8F5E9] active:scale-95'
               }`}
             >
               Siguiente &rarr;
@@ -213,6 +213,6 @@ function ClasifBadge({ value }) {
   let cls = 'bg-gray-100 text-gray-600 border-gray-200'
   if (v.includes('SOSPECHOSO')) cls = 'bg-amber-50 text-amber-700 border-amber-200'
   else if (v.includes('CONFIRMADO')) cls = 'bg-red-50 text-red-700 border-red-200'
-  else if (v.includes('DESCARTADO')) cls = 'bg-igss-50 text-igss-700 border-igss-200'
+  else if (v.includes('DESCARTADO')) cls = 'bg-[#F1F8F1] text-[#2E7D32] border-[#C8E6C9]'
   return <span className={`text-[11px] px-2.5 py-1 rounded-lg font-bold border whitespace-nowrap ${cls}`}>{value || '-'}</span>
 }
