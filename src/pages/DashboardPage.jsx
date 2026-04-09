@@ -67,7 +67,7 @@ export default function DashboardPage() {
                 labelFormatter={(l) => `Semana ${l}`}
                 contentStyle={{ borderRadius: 8, border: '1px solid #e5e7eb', fontSize: 13 }}
               />
-              <Bar dataKey="total" fill="#003876" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="total" fill="#1B5E20" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         ) : (
@@ -111,7 +111,7 @@ export default function DashboardPage() {
             <h3 className="text-sm font-semibold text-gray-700">Ultimas Fichas Registradas</h3>
             <button
               onClick={() => navigate('/fichas')}
-              className="text-xs text-[#003876] hover:text-[#005baa] font-medium"
+              className="text-xs text-igss-800 hover:text-[#005baa] font-medium"
             >
               Ver todas &rarr;
             </button>
@@ -151,7 +151,7 @@ function getClasifColor(name) {
 
 function KpiCard({ label, value, icon, color }) {
   const styles = {
-    blue: { bg: 'bg-[#003876]/5', text: 'text-[#003876]', border: 'border-[#003876]/10', iconBg: 'bg-[#003876]/10' },
+    blue: { bg: 'bg-igss-50', text: 'text-igss-800', border: 'border-igss-100', iconBg: 'bg-igss-100' },
     amber: { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-100', iconBg: 'bg-amber-100' },
     red: { bg: 'bg-red-50', text: 'text-red-700', border: 'border-red-100', iconBg: 'bg-red-100' },
     purple: { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-100', iconBg: 'bg-purple-100' },
