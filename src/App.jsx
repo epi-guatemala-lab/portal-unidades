@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/DashboardPage'
 import FichasPage from './pages/FichasPage'
 import FichaDetailPage from './pages/FichaDetailPage'
+import LabUploadPage from './pages/LabUploadPage'
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth()
@@ -60,6 +61,9 @@ function Layout({ children }) {
         <div className="max-w-5xl mx-auto px-4 flex gap-1">
           <TabLink to="/" end>Dashboard</TabLink>
           <TabLink to="/fichas">Fichas</TabLink>
+          {user?.unidad?.puede_cargar_labs && (
+            <TabLink to="/labs/upload">Cargar Laboratorios</TabLink>
+          )}
         </div>
       </nav>
 
@@ -103,6 +107,7 @@ export default function App() {
         <Route path="/" element={<ProtectedRoute><Layout><DashboardPage /></Layout></ProtectedRoute>} />
         <Route path="/fichas" element={<ProtectedRoute><Layout><FichasPage /></Layout></ProtectedRoute>} />
         <Route path="/fichas/:id" element={<ProtectedRoute><Layout><FichaDetailPage /></Layout></ProtectedRoute>} />
+        <Route path="/labs/upload" element={<ProtectedRoute><Layout><LabUploadPage /></Layout></ProtectedRoute>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AuthProvider>

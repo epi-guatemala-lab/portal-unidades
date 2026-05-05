@@ -109,3 +109,48 @@ export async function changePassword(currentPassword, newPassword) {
   })
   return res.json()
 }
+
+// ── Carga de Laboratorios HGE ──
+
+export async function uploadLabsExcel(file, pcrDefaultTipo = 'hisopado') {
+  const fd = new FormData()
+  fd.append('file', file)
+  fd.append('pcr_default_tipo', pcrDefaultTipo)
+  const url = `${API_URL}/labs/upload`
+  const headers = {}
+  if (_token) headers['Authorization'] = `Bearer ${_token}`
+  const res = await fetch(url, { method: 'POST', body: fd, headers })
+  if (res.status === 401) {
+    clearToken()
+    window.location.href = import.meta.env.BASE_URL + 'login'
+    throw new Error('Sesion expirada')
+  }
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: 'Error de conexion' }))
+    throw new Error(err.detail || `Error ${res.status}`)
+  }
+  return res.json()
+}
+
+export async function getLabsPreview(batchId) {
+  const res = await request(`/labs/preview/${batchId}`)
+  return res.json()
+}
+
+export async function applyLabsBatch(batchId, filaIds = null) {
+  const res = await request(`/labs/apply/${batchId}`, {
+    method: 'POST',
+    body: filaIds ? { fila_ids: filaIds } : {},
+  })
+  return res.json()
+}
+
+export async function cancelLabsBatch(batchId) {
+  const res = await request(`/labs/cancel/${batchId}`, { method: 'POST' })
+  return res.json()
+}
+
+export async function getLabsBatches(limit = 20) {
+  const res = await request(`/labs/batches?limit=${limit}`)
+  return res.json()
+}
